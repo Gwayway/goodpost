@@ -7,7 +7,7 @@
 
       <v-icon>mdi-circle2</v-icon>
 
-      <v-icon>mdi-triangle</v-icon>
+      <v-icon>mdi-triangle3</v-icon>
     </v-system-bar>
 
     <v-navigation-drawer
