@@ -1,17 +1,9 @@
 <template>
   <v-app id="inspire">
-    <v-system-bar app>
-      <v-spacer></v-spacer>
-
-      <v-icon>mdi-square1</v-icon>
-
-      <v-icon>mdi-circle2</v-icon>
-
-      <v-icon>mdi-triangle34</v-icon>
-    </v-system-bar>
 
     <v-navigation-drawer
       v-model="drawer"
+      permanent
       app
     >
       <v-sheet
@@ -49,7 +41,6 @@
     <v-main>
       <v-container
         class="py-8 px-6"
-        fluid
       >
         <v-row>
           <v-col
