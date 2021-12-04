@@ -1,7 +1,8 @@
 <template>
-  <v-app>
+  <v-app >
+    <HelloWorld></HelloWorld>
     <v-main>
-      <HelloWorld/>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
@@ -13,7 +14,7 @@ export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    HelloWorld
   },
 
   data: () => ({
