@@ -18,11 +18,10 @@
                     </v-list-item-avatar>
 
                     <v-list-item-content>
-                      <v-list-item-title>单号 {{ n }}</v-list-item-title>
+                      <v-list-item-title>单号 {{ n.num }}</v-list-item-title>
 
                       <v-list-item-subtitle>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Nihil repellendus distinctio similique
+                        {{ n.resmessage }}
                       </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-btn>审核</v-btn>
