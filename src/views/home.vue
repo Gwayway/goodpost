@@ -15,6 +15,7 @@
                 <template v-for="n in orderList">
                   <v-list-item :key="n">
                     <v-list-item-avatar color="grey darken-1">
+                    
                     </v-list-item-avatar>
 
                     <v-list-item-content>
@@ -51,6 +52,5 @@ export default {
   }),
 };
 </script>
-© 2021 GitHub, Inc.
 <style scoped>
 </style>
