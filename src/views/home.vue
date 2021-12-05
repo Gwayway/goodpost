@@ -15,6 +15,7 @@
                 <template v-for="n in obj.order">
                   <v-list-item :key="n">
                     <v-list-item-avatar color="grey darken-1">
+                    
                     </v-list-item-avatar>
 
                     <v-list-item-content>
