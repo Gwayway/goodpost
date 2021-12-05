@@ -14,7 +14,7 @@
           size="64"
         ></v-avatar>
 
-        <div>john@vuetifyjs.com</div>
+        <div>无敌的威仔</div>
       </v-sheet>
 
       <v-divider></v-divider>
