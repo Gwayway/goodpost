@@ -6,6 +6,10 @@ Vue.use(Router);
 export default new Router({
     routes:[
         {
+            path:'/',
+            component:Home
+        },
+        {
             name:'setting',
             path:'/setting',
             component:Setting

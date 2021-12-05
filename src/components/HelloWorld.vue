@@ -1,6 +1,4 @@
 <template>
-  <v-app id="inspire">
-
     <v-navigation-drawer
       v-model="drawer"
       permanent
@@ -38,8 +36,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-  </v-app>
 </template>
 
 <script>
