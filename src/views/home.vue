@@ -57,14 +57,19 @@
 export default {
   data: () => ({
     cards: ["审核", "支付"],
-    orderList: [123, 346, 897],
     orderObj: [
       {
         card: "审核",
         order: [123, 345, 678],
         actions: [
-          { name: "审核", actionsfuntion: function(that){that.comfir();} },
-          { name: "反审核", actionsfuntion: () => {} },
+          {
+            name: "审核",
+            actionsfuntion: function (that) {
+              that.comfir();
+            },
+          },
+          { name: "反审核", actionsfuntion: () => {
+          } },
         ],
       },
       {
@@ -77,14 +82,17 @@ export default {
       },
     ],
   }),
-  methods:{
-    dosomthing(bt){
+  methods: {
+    dosomthing(bt) {
       bt.actionsfuntion(this);
     },
-    comfir(){
+    comfir() {
       console.log("调用审核");
-    }
-  }
+    },
+    pay() {},
+    discomfir() {},
+    dispay() {},
+  },
 };
 </script>
 <style scoped>
