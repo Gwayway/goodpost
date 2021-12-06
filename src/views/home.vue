@@ -15,7 +15,6 @@
                 <template v-for="n in obj.order">
                   <v-list-item :key="n">
                     <v-list-item-avatar color="grey darken-1">
-                    
                     </v-list-item-avatar>
 
                     <v-list-item-content>
@@ -40,7 +39,7 @@
                   </v-list-item>
 
                   <v-divider
-                    v-if="n !== orderList.length"
+                    v-if="n !== obj.length"
                     :key="`divider-${n}`"
                     inset
                   ></v-divider>
@@ -60,7 +59,7 @@ export default {
     orderObj: [
       {
         card: "审核",
-        order: [123, 345, 678],
+        order: [{num:1,resmessage:""},{num:2,resmessage:""},],
         actions: [
           {
             name: "审核",
@@ -74,7 +73,7 @@ export default {
       },
       {
         card: "支付",
-        order: [5767, 975, 34],
+        order: [{num:1,resmessage:""},{num:2,resmessage:""},],
         actions: [
           { name: "支付", actionsfuntion: () => {} },
           { name: "反支付", actionsfuntion: () => {} },
