@@ -13,7 +13,7 @@
     ></v-text-field>
 
     <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-      保存
+      保存修改
     </v-btn>
   </v-form>
 </template>
