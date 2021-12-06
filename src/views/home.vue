@@ -40,7 +40,7 @@
 
                   <v-divider
                     v-if="n !== obj.length"
-                    :key="`divider-${n}`"
+                    :key="`divider-${n.num}`"
                     inset
                   ></v-divider>
                 </template>
