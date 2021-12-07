@@ -1,9 +1,9 @@
 const actions = {};
 const mutations = {};
 const state = {
-    baseUrl: "",
-    mainconfirurl:"",
-    mainpayurl:"",
+    baseUrl: "1",
+    maincomfirurl:"2",
+    mainpayurl:"3",
     actions: [{
         name: "comfir",
         shoturl: ""

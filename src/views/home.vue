@@ -13,7 +13,7 @@
             <v-expansion-panel-content>
               <v-list two-line>
                 <template v-for="n in obj.order">
-                  <v-list-item :key="n">
+                  <v-list-item :key="n.num">
                     <v-list-item-avatar color="grey darken-1">
                     </v-list-item-avatar>
 
