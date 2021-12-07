@@ -10,7 +10,6 @@
       v-model="comfirurl"
       label="审核地址"
       required
-      solo
       style="width: 50%"
     ></v-text-field>
 
@@ -18,7 +17,6 @@
       v-model="discomfirurl"
       label="反审核地址"
       required
-      solo
       style="width: 50%"
     ></v-text-field>
 
@@ -32,7 +30,6 @@
       v-model="payurl"
       label="支付地址"
       required
-      solo
       style="width: 50%"
     ></v-text-field>
 
@@ -40,7 +37,6 @@
       v-model="dispayurl"
       label="反支付地址"
       required
-      solo
       style="width: 50%"
     ></v-text-field>
 

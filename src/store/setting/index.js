@@ -4,19 +4,10 @@ const state = {
     baseUrl: "1",
     maincomfirurl:"2",
     mainpayurl:"3",
-    actions: [{
-        name: "comfir",
-        shoturl: ""
-    }, {
-        name: "discomfir",
-        shoturl: ""
-    }, {
-        name: "pay",
-        shoturl: ""
-    }, {
-        name: "dispay",
-        shoturl: ""
-    }, ]
+    comfirurl:"4",
+    discomfirurl:"5",
+    payurl:"6",
+    dispayurl:"7"
 }
 const getters = {};
 export default {
