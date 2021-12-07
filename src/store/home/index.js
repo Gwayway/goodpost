@@ -1,6 +1,8 @@
 const actions={};
 const mutations={};
-const state=()=>{};
+const state=()=>{
+    
+};
 const getters={};
 export default{
     namespaced: true,
