@@ -12,7 +12,7 @@
             <v-expansion-panel-header>{{ obj.card }}</v-expansion-panel-header>
             <v-expansion-panel-content>
               <v-list two-line>
-                <template v-for="n in obj.order">
+                <template v-for="n in obj.order" >
                   <v-list-item :key="n.num">
                     <v-list-item-avatar color="grey darken-1">
                     </v-list-item-avatar>
@@ -26,6 +26,7 @@
                       <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn
+                          :actionbt="bt.name"
                           v-for="bt in obj.actions"
                           :key="bt.name"
                           text
@@ -59,7 +60,10 @@ export default {
     orderObj: [
       {
         card: "审核",
-        order: [{num:1,resmessage:""},{num:2,resmessage:""},],
+        order: [
+          { num: 1, resmessage: "" },
+          { num: 2, resmessage: "" },
+        ],
         actions: [
           {
             name: "审核",
@@ -67,13 +71,15 @@ export default {
               that.comfir();
             },
           },
-          { name: "反审核", actionsfuntion: () => {
-          } },
+          { name: "反审核", actionsfuntion: () => {} },
         ],
       },
       {
         card: "支付",
-        order: [{num:1,resmessage:""},{num:2,resmessage:""},],
+        order: [
+          { num: 1, resmessage: "" },
+          { num: 2, resmessage: "" },
+        ],
         actions: [
           { name: "支付", actionsfuntion: () => {} },
           { name: "反支付", actionsfuntion: () => {} },
@@ -90,7 +96,7 @@ export default {
     },
     pay() {},
     discomfir() {},
-    dispay() {},
+    dispay() {}
   },
 };
 </script>
