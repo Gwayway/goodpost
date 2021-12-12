@@ -1,12 +1,10 @@
 <template>
   <v-app>
     <HelloWorld></HelloWorld>
-    
     <v-main>
       <v-container fluid>
         <router-view></router-view>
       </v-container>
-      
     </v-main>
   </v-app>
 </template>
@@ -24,5 +22,10 @@ export default {
   data: () => ({
     //
   }),
+  methods:{
+    test(){
+      console.log("4536363446");
+    }
+  }
 };
 </script>
