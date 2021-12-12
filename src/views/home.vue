@@ -162,32 +162,12 @@ export default {
       }
     },
     add() {
-      switch (this.addtype) {
-        case 0:
-          {
-            this.orderObj[this.addtype].order.unshift({
+      this.orderObj[this.addtype].order.unshift({
               id: nanoid(),
               num: this.inputvale,
               resmessage: "",
             });
             this.dialog = false;
-          }
-
-          break;
-        case 1:
-          {
-            this.orderObj[this.addtype].order.unshift({
-              id: nanoid(),
-              num: this.inputvale,
-              resmessage: "",
-            });
-            this.dialog = false;
-          }
-
-          break;
-        default:
-          break;
-      }
     },
     test(e) {
       console.log(e);
