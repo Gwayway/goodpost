@@ -24,7 +24,13 @@
         <v-btn>支付全部</v-btn>
         <v-btn @click="(dialog = true), (addtype = 0)">添加审核单据</v-btn>
         <v-btn @click="(dialog = true), (addtype = 1)">添加支付单据</v-btn>
-        <v-file-input label="File input" v-model="fileObj"></v-file-input>
+
+        <v-file-input
+          label="File input"
+          accept="text/plain"
+          @change="getFileObj"
+          v-model="fileObj"
+        ></v-file-input>
       </v-col>
       <v-expansion-panels accordion @click.native="dosomthing">
         <v-expansion-panel v-for="obj in orderObj" :key="obj.card">
@@ -97,9 +103,9 @@ export default {
         actions: [
           {
             name: "审核",
-            actiontype: 1,
+            actiontype: "SUCCESS",
           },
-          { name: "反审核", actiontype: "reject" },
+          { name: "拒绝", actiontype: "REJECT" },
         ],
       },
       {
@@ -117,57 +123,36 @@ export default {
   }),
   methods: {
     getFileObj() {
-      let reader = new FileReader();
+      let orderList = [];
+      const reader = new FileReader();
       reader.readAsText(this.fileObj, "UTF-8");
       reader.onload = (e) => {
-        console.log(e.target.result);
+        orderList = e.target.result.toString().split(",");
+        orderList.forEach((order) => {
+          this.orderObj[0].order.unshift({
+            id: nanoid(),
+            num: order,
+            resmessage: "",
+          });
+        });
       };
     },
     dosomthing(e) {
       let actiontype = e.target.dataset.actiontype;
-      let ordernum = e.target.dataset.ordernum;
+      //let ordernum = e.target.dataset.ordernum;
       if (!actiontype) {
         return;
       }
-      switch (actiontype) {
-        case "1":
-          {
-            alert(actiontype + ":" + ordernum);
-          }
-
-          break;
-        case "2":
-          {
-            alert(actiontype + ":" + ordernum);
-          }
-
-          break;
-        case "3":
-          {
-            alert(actiontype + ":" + ordernum);
-          }
-
-          break;
-        case "4":
-          {
-            alert(actiontype + ":" + ordernum);
-          }
-
-          break;
-        default:
-          {
-            alert("null");
-          }
-          break;
-      }
     },
     add() {
-      this.orderObj[this.addtype].order.unshift({
-              id: nanoid(),
-              num: this.inputvale,
-              resmessage: "",
-            });
-            this.dialog = false;
+      if (this.addtype !== -1) {
+        this.orderObj[this.addtype].order.unshift({
+          id: nanoid(),
+          num: this.inputvale,
+          resmessage: "",
+        });
+      }
+      this.dialog = false;
     },
     test(e) {
       console.log(e);
