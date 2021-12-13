@@ -42,6 +42,11 @@
             <v-expansion-panel-content>
               <v-list two-line>
                 <template v-for="n in obj.order">
+                  <v-divider
+                    v-if="n !== obj.length"
+                    :key="`divider-${n.id}`"
+                    inset
+                  ></v-divider>
                   <v-list-item :key="n.id">
                     <v-list-item-avatar color="grey darken-1" data-a="开心">
                     </v-list-item-avatar>
@@ -72,12 +77,6 @@
                       </v-card-actions>
                     </v-list-item-content>
                   </v-list-item>
-
-                  <v-divider
-                    v-if="n !== obj.length"
-                    :key="`divider-${n.id}`"
-                    inset
-                  ></v-divider>
                 </template>
               </v-list>
             </v-expansion-panel-content>
@@ -134,7 +133,7 @@ export default {
           });
         });
         this.dialog = false;
-        this.fileObj=null;
+        this.fileObj = null;
       };
     },
     dosomthing(e) {
@@ -152,7 +151,7 @@ export default {
           resmessage: "",
         });
       }
-      this.inputvale=null;
+      this.inputvale = null;
       this.dialog = false;
     },
     test(e) {
