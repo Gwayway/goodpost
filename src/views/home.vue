@@ -1,7 +1,7 @@
 <template>
   <v-container class="py-8 px-6" fluid>
-    <v-dialog v-model="dialog" width="500" >
-      <v-card class="overflow-x-hidden" >
+    <v-dialog v-model="dialog" width="500">
+      <v-card class="overflow-x-hidden">
         <v-card-title class="text-h5 grey lighten-2"> 输入单号 </v-card-title>
         <v-text-field
           prepend-icon="mdi-map-marker"
@@ -99,10 +99,7 @@ export default {
     orderObj: [
       {
         card: "审核",
-        order: [
-          { id: nanoid(), num: 1, resmessage: "" },
-          { id: nanoid(), num: 2, resmessage: "" },
-        ],
+        order: [],
         actions: [
           {
             name: "审核",
@@ -113,10 +110,7 @@ export default {
       },
       {
         card: "支付",
-        order: [
-          { id: nanoid(), num: 1, resmessage: "" },
-          { id: nanoid(), num: 2, resmessage: "" },
-        ],
+        order: [],
         actions: [
           { name: "支付成功", actiontype: "PAID" },
           { name: "退票", actiontype: "RETURNED" },
@@ -126,6 +120,7 @@ export default {
   }),
   methods: {
     getFileObj() {
+      if (!this.fileObj) return;
       let orderList = [];
       const reader = new FileReader();
       reader.readAsText(this.fileObj, "UTF-8");
@@ -139,7 +134,7 @@ export default {
           });
         });
         this.dialog = false;
-        this.$refs.inputFile.outerHTML;
+        this.fileObj=null;
       };
     },
     dosomthing(e) {
@@ -150,13 +145,14 @@ export default {
       }
     },
     add() {
-      if (this.addtype !== -1 && this.inputvale !== "") {
+      if (this.addtype !== -1 && this.inputvale) {
         this.orderObj[this.addtype].order.unshift({
           id: nanoid(),
           num: this.inputvale,
           resmessage: "",
         });
       }
+      this.inputvale=null;
       this.dialog = false;
     },
     test(e) {
