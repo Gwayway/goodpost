@@ -1,13 +1,23 @@
 <template>
   <v-container class="py-8 px-6" fluid>
-    <v-dialog v-model="dialog" width="500">
-      <v-card>
+    <v-dialog v-model="dialog" width="500" >
+      <v-card class="overflow-x-hidden" >
         <v-card-title class="text-h5 grey lighten-2"> 输入单号 </v-card-title>
         <v-text-field
           prepend-icon="mdi-map-marker"
           v-model="inputvale"
           placeholder="请输入单号"
         ></v-text-field>
+
+        <v-divider></v-divider>
+
+        <v-file-input
+          ref="inputFile"
+          label="File input"
+          accept="text/plain"
+          @change="getFileObj"
+          v-model="fileObj"
+        ></v-file-input>
 
         <v-divider></v-divider>
 
@@ -24,13 +34,6 @@
         <v-btn>支付全部</v-btn>
         <v-btn @click="(dialog = true), (addtype = 0)">添加审核单据</v-btn>
         <v-btn @click="(dialog = true), (addtype = 1)">添加支付单据</v-btn>
-
-        <v-file-input
-          label="File input"
-          accept="text/plain"
-          @change="getFileObj"
-          v-model="fileObj"
-        ></v-file-input>
       </v-col>
       <v-expansion-panels accordion @click.native="dosomthing">
         <v-expansion-panel v-for="obj in orderObj" :key="obj.card">
@@ -129,12 +132,14 @@ export default {
       reader.onload = (e) => {
         orderList = e.target.result.toString().split(",");
         orderList.forEach((order) => {
-          this.orderObj[0].order.unshift({
+          this.orderObj[this.addtype].order.unshift({
             id: nanoid(),
             num: order,
             resmessage: "",
           });
         });
+        this.dialog = false;
+        this.$refs.inputFile.outerHTML;
       };
     },
     dosomthing(e) {
@@ -145,7 +150,7 @@ export default {
       }
     },
     add() {
-      if (this.addtype !== -1) {
+      if (this.addtype !== -1 && this.inputvale !== "") {
         this.orderObj[this.addtype].order.unshift({
           id: nanoid(),
           num: this.inputvale,
@@ -161,5 +166,3 @@ export default {
   watch: {},
 };
 </script>
-<style scoped>
-</style>
