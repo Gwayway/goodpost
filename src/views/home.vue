@@ -138,10 +138,11 @@ export default {
     },
     dosomthing(e) {
       let actiontype = e.target.dataset.actiontype;
-      //let ordernum = e.target.dataset.ordernum;
-      if (!actiontype) {
+      let ordernum = e.target.dataset.ordernum;
+      if (!actiontype && !ordernum) {
         return;
       }
+      console.log(`执行${actiontype}`);
     },
     add() {
       if (this.addtype !== -1 && this.inputvale) {
