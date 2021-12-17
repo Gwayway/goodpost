@@ -1,7 +1,8 @@
 import axios from "axios";
 const requests = axios.create({
-    baseURL: "", //从
-    timeout: 3000
+    baseURL: "http://wy.mideadc.com/charging-api/rest-api/v1/midea", 
+    timeout: 3000,
+    headers:{'Content-Type':'application/json'}
 });
 requests.interceptors.request.use((config) => {
     return config;
